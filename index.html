@@ -14,7 +14,6 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-    <script src="/static/CreditCount.min.js"></script>
 </head>
 
 <body style="margin: 0px;">
@@ -49,9 +48,9 @@
                     <div class="ui top attached segment">
                         <form class="ui form">
                             <div class="field">
-                                <label>您的专业</label>
+                                <label>您的拟准出专业</label>
                                 <select class="ui search dropdown">
-                                    <option value="ZW">经济管理类</option>
+                                    <option value="ZW">请选择您的拟准出专业</option>
                                     <option value="ZW">工业工程</option>
                                     <option value="ZW">信息管理与信息系统</option>
                                     <option value="ZW">工程管理</option>
@@ -84,8 +83,8 @@
                     <h2 class="ui header">
                         <i class="archive icon"></i>
                         <div class="content">
-                            您已共选 x 学分
-                            <div class="sub header">还需再选 x 学分</div>
+                            您已共选 <span id="total-credits">x</span> 学分
+                            <div class="sub header">还需再选 <span id="remain-credits">x</span> 学分</div>
                         </div>
                     </h2>
                     <h6 class="ui horizontal divider header">
@@ -178,26 +177,23 @@
                     <tr>
                         <td>
                             <div class="ui fitted toggle checkbox">
-
-                                ‘
-                                
-                                <input type="checkbox"><label for=""></label>
+                                <input type="checkbox" class="cc-course-checkbox"><label for=""></label>
                             </div>
                         </td>
                         <td>现代程序设计</td>
-                        <td>2</td>
-                        <td class="negative">大三</td>
+                        <td class="cc-course-credit">2</td>
+                        <td>大三</td>
                         <td>秋季</td>
                         <td>信息管理与信息系统</td>
                     </tr>
-                    <tr class="positive">
+                    <tr>
                         <td>
                             <div class="ui fitted toggle checkbox">
-                                <input type="checkbox"><label for=""></label>
+                                <input type="checkbox" class="cc-course-checkbox"><label for=""></label>
                             </div>
                         </td>
-                        <td>Jimmy</td>
-                        <td><i class="icon checkmark"></i> Approved</td>
+                        <td>人工智能与深度学习</td>
+                        <td class="cc-course-credit">2.5</td>
                         <td>None</td>
                         <td>None</td>
                         <td>None</td>
@@ -244,6 +240,7 @@
         </div>
     </div>
 
+    <script src="/static/CreditCount.min.js"></script>
 
 </body>
 
