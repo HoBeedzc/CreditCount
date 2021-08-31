@@ -46,24 +46,24 @@
                 </div>
                 <div class="ui segments">
                     <div class="ui top attached segment">
-                        <form class="ui form">
+                        <form class="ui form" action="/" method="get">
                             <div class="field">
                                 <label>您的拟准出专业</label>
-                                <select class="ui search dropdown">
-                                    <option value="ZW">请选择您的拟准出专业</option>
-                                    <option value="ZW">工业工程</option>
-                                    <option value="ZW">信息管理与信息系统</option>
-                                    <option value="ZW">工程管理</option>
-                                    <option value="ZW">会计</option>
-                                    <option value="ZW">工商管理</option>
-                                    <option value="ZW">经济统计</option>
-                                    <option value="ZW">能源经济</option>
-                                    <option value="ZW">金融工程</option>
+                                <select class="ui search dropdown" id="major-selecter" name="major">
+                                    <option value="None">请选择您的拟准出专业</option>
+                                    <option value="工业工程">工业工程</option>
+                                    <option value="信息管理与信息系统">信息管理与信息系统</option>
+                                    <option value="工程管理">工程管理</option>
+                                    <option value="会计">会计</option>
+                                    <option value="工商管理">工商管理</option>
+                                    <option value="经济统计">经济统计</option>
+                                    <option value="能源经济">能源经济</option>
+                                    <option value="金融工程">金融工程</option>
                                 </select>
                             </div>
                             <div class="field">
                                 <label>您的年级</label>
-                                <select class="ui search dropdown">
+                                <select class="ui search dropdown" id="grade-selecter" name="grade">
                                     <option value="None">请选择您的年级</option>
                                     <option value="1">大一</option>
                                     <option value="2">大二</option>
@@ -72,7 +72,7 @@
                                 </select>
                             </div>
                             <div class="ui buttons">
-                                <button class="ui button">确认</button>
+                                <button class="ui button" type="button" onclick="return submitForm()">确认</button>
                                 <div class="or"></div>
                                 <button class="ui button" type="reset">重置</button>
                             </div>
@@ -83,54 +83,37 @@
                     <h2 class="ui header">
                         <i class="archive icon"></i>
                         <div class="content">
-                            您已共选 <span id="total-credits">x</span> 学分
-                            <div class="sub header">还需再选 <span id="remain-credits">x</span> 学分</div>
+                            您已共选 <span class="cc-credit-total">x</span> 学分
+                            <div class="sub header">还需再选 <span class="cc-credit-remain">x</span> 学分</div>
                         </div>
                     </h2>
                     <h6 class="ui horizontal divider header">
                         课程明细
                     </h6>
-                    <p>Doggie treats are good for all times of the year. Proven to be eaten by 99.9% of all dogs
-                        worldwide.</p>
+                    <p>以下会列出您选择的课程，请认真核对</p>
                     <div class="ui relaxed divided list">
-                        <div class="item">
-                            <i class="large github middle aligned icon"></i>
+                        <div class="item" id="left-courses-list-item-template" style="display: none">
+                            <i class="large book middle aligned icon"></i>
                             <div class="content">
-                                <a class="header">Semantic-Org/Semantic-UI</a>
-                                <div class="description">Updated 10 mins ago</div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <i class="large github middle aligned icon"></i>
-                            <div class="content">
-                                <a class="header">Semantic-Org/Semantic-UI-Docs</a>
-                                <div class="description">Updated 22 mins ago</div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <i class="large github middle aligned icon"></i>
-                            <div class="content">
-                                <a class="header">Semantic-Org/Semantic-UI-Meteor</a>
-                                <div class="description">Updated 34 mins ago</div>
+                                <div class="header">现代程序设计/核心专业类</div>
+                                <div class="description">
+                                    <span class="cc-course-credit">2学分</span>
+                                    <span class="cc-course-grade">大三</span>
+                                    <span class="cc-course-term">秋季</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <h6 class="ui horizontal divider header">
                         学分明细
                     </h6>
-                    <p>Doggie treats are good for all times of the year. Proven to be eaten by 99.9% of all dogs
-                        worldwide.</p>
+                    <p>以下会列出您的学分明细，请认真核对</p>
                     <ul class="ui list">
-                        <li>Gaining Access</li>
-                        <li>Inviting Friends</li>
-                        <li>Benefits
-                            <ul>
-                                <li>Use Anywhere</li>
-                                <li>Rebates</li>
-                                <li>Discounts</li>
-                            </ul>
-                        </li>
-                        <li>Warranty</li>
+                        <li>本专业核专 <span class="cc-credit-core-major">x</span> 分（不计入）</li>
+                        <li>其他专业核专 <span class="cc-credit-core-other">x</span> 分</li>
+                        <li>一般专业 <span class="cc-credit-general">x</span> 分</li>
+                        <li>有效有共计 <span class="cc-credit-total">x</span> 分</li>
+                        <li>剩余应选 <span class="cc-credit-remain">x</span> 分</li>
                     </ul>
                 </div>
             </div>
@@ -180,11 +163,11 @@
                                 <input type="checkbox" class="cc-course-checkbox"><label for=""></label>
                             </div>
                         </td>
-                        <td>现代程序设计</td>
+                        <td class="cc-course-name">现代程序设计</td>
                         <td class="cc-course-credit">2</td>
-                        <td>大三</td>
-                        <td>秋季</td>
-                        <td>信息管理与信息系统</td>
+                        <td class="cc-course-grade">大三</td>
+                        <td class="cc-course-term">秋季</td>
+                        <td class="cc-course-major">信息管理与信息系统</td>
                     </tr>
                     <tr>
                         <td>
@@ -192,27 +175,35 @@
                                 <input type="checkbox" class="cc-course-checkbox"><label for=""></label>
                             </div>
                         </td>
-                        <td>人工智能与深度学习</td>
+                        <td class="cc-course-name">人工智能与深度学习</td>
                         <td class="cc-course-credit">2.5</td>
-                        <td>None</td>
-                        <td>None</td>
-                        <td>None</td>
+                        <td class="cc-course-grade">大三</td>
+                        <td class="cc-course-term">春季</td>
+                        <td class="cc-course-major">信息管理与信息系统|经济统计</td>
                     </tr>
                     <tr>
-                        <td class="collapsing"></td>
-                        <td>Jamie</td>
-                        <td>Unknown</td>
-                        <td class="positive"> Requires call</td>
-                        <td><i class="icon checkmark"></i> Approved</td>
-                        <td>None</td>
+                        <td>
+                            <div class="ui fitted toggle checkbox">
+                                <input type="checkbox" class="cc-course-checkbox"><label for=""></label>
+                            </div>
+                        </td>
+                        <td class="cc-course-name">消费者行为研究</td>
+                        <td class="cc-course-credit">2</td>
+                        <td class="cc-course-grade">大三</td>
+                        <td class="cc-course-term">秋季</td>
+                        <td class="cc-course-major">一般专业类</td>
                     </tr>
-                    <tr class="negative">
-                        <td class="collapsing"></td>
-                        <td>Jill</td>
-                        <td>Unknown</td>
-                        <td>None</td>
-                        <td><i class="icon checkmark"></i> Approved</td>
-                        <td>None</td>
+                    <tr>
+                        <td>
+                            <div class="ui fitted toggle checkbox">
+                                <input type="checkbox" class="cc-course-checkbox"><label for=""></label>
+                            </div>
+                        </td>
+                        <td class="cc-course-name">产业经济学</td>
+                        <td class="cc-course-credit">3</td>
+                        <td class="cc-course-grade">大三</td>
+                        <td class="cc-course-term">春季</td>
+                        <td class="cc-course-major">能源经济</td>
                     </tr>
                 </tbody>
             </table>
