@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CreditCount - 学分核算</title>
+    <link rel="icon" href="/static/count.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="/static/CreditCount.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="/static/CreditCount.min.js"></script>
+</head>
+
+<body style="margin: 0px;">
+    <div class="ui fixed borderless menu" style="z-index: 100; background-color: #13227a; color:#FFF;">
+        <div class="ui container">
+            <a href="/" class="ui header item" style="color: #FFF;"> CreditCount by Hobee </a>
+            <a href="/" class="ui header item" style="color: #FFF;"> BUAA SEM 本科一般专业课学分核算 </a>
+            <a href="/" class="ui header item" style="color: #FFF;"> 愿大家都能顺利毕业 </a>
+        </div>
+    </div>
+    <div class="ui main container" style="padding-top: 7em;">
+        <div class="ui segment">
+            <div class="ui left rail">
+                <div class="ui segments">
+                    <div class="ui top attached center aligned segment">
+                        <img class="circular image" src="/static/count.png" style="border-radius: 50%;height: 100px;">
+                    </div>
+                    <div class="ui bottom attached center aligned medium header">CreditCount by Hobee</div>
+                </div>
+                <div class="ui segments">
+                    <div class="ui top attached segment">
+                        Layout by Semantic UI.<br>
+                        Powered by Github Pages.<br>
+                        Thanks to 🐍 Online Judge.<br>
+                        Thanks to Alibaba Iconfront.<br>
+                    </div>
+                    <div class="ui bottom attached segment">
+                        (C)copyright 2021 Hobee.<br>All Rights Reserved.
+                    </div>
+                </div>
+                <div class="ui segments">
+                    <div class="ui top attached segment">
+                        <form class="ui form">
+                            <div class="field">
+                                <label>您的专业</label>
+                                <select class="ui search dropdown">
+                                    <option value="ZW">经济管理类</option>
+                                    <option value="ZW">工业工程</option>
+                                    <option value="ZW">信息管理与信息系统</option>
+                                    <option value="ZW">工程管理</option>
+                                    <option value="ZW">会计</option>
+                                    <option value="ZW">工商管理</option>
+                                    <option value="ZW">经济统计</option>
+                                    <option value="ZW">能源经济</option>
+                                    <option value="ZW">金融工程</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label>您的年级</label>
+                                <select class="ui search dropdown">
+                                    <option value="None">请选择您的年级</option>
+                                    <option value="1">大一</option>
+                                    <option value="2">大二</option>
+                                    <option value="3">大三</option>
+                                    <option value="4">大四</option>
+                                </select>
+                            </div>
+                            <div class="ui buttons">
+                                <button class="ui button">确认</button>
+                                <div class="or"></div>
+                                <button class="ui button" type="reset">重置</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="ui segment">
+                    <h2 class="ui header">
+                        <i class="archive icon"></i>
+                        <div class="content">
+                            您已共选 x 学分
+                            <div class="sub header">还需再选 x 学分</div>
+                        </div>
+                    </h2>
+                    <h6 class="ui horizontal divider header">
+                        课程明细
+                    </h6>
+                    <p>Doggie treats are good for all times of the year. Proven to be eaten by 99.9% of all dogs
+                        worldwide.</p>
+                    <div class="ui relaxed divided list">
+                        <div class="item">
+                            <i class="large github middle aligned icon"></i>
+                            <div class="content">
+                                <a class="header">Semantic-Org/Semantic-UI</a>
+                                <div class="description">Updated 10 mins ago</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="large github middle aligned icon"></i>
+                            <div class="content">
+                                <a class="header">Semantic-Org/Semantic-UI-Docs</a>
+                                <div class="description">Updated 22 mins ago</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="large github middle aligned icon"></i>
+                            <div class="content">
+                                <a class="header">Semantic-Org/Semantic-UI-Meteor</a>
+                                <div class="description">Updated 34 mins ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h6 class="ui horizontal divider header">
+                        学分明细
+                    </h6>
+                    <p>Doggie treats are good for all times of the year. Proven to be eaten by 99.9% of all dogs
+                        worldwide.</p>
+                    <ul class="ui list">
+                        <li>Gaining Access</li>
+                        <li>Inviting Friends</li>
+                        <li>Benefits
+                            <ul>
+                                <li>Use Anywhere</li>
+                                <li>Rebates</li>
+                                <li>Discounts</li>
+                            </ul>
+                        </li>
+                        <li>Warranty</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ui right rail">
+                <div class="ui segments">
+                    <div class="ui top attached center aligned segment">
+                        <img class="circular image" src="/static/count.png" style="border-radius: 50%;height: 100px;">
+                    </div>
+                    <div class="ui bottom attached center aligned medium header">CreditCount by Hobee</div>
+                </div>
+                <div class="ui segments">
+                    <div class="ui top attached segment">
+                        Layout by Semantic UI.<br>
+                        Powered by Github Pages.<br>
+                        Thanks to 🐍 Online Judge.<br>
+                        Thanks to Alibaba Iconfront.<br>
+                    </div>
+                    <div class="ui bottom attached segment">
+                        (C)copyright 2021 Hobee.<br>All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui warning message">
+                <i class="close icon"></i>
+                <div class="header">
+                    在使用系统前，请务必仔细阅读以下内容：
+                </div>
+                Visit our registration page, then try again
+            </div>
+
+            <table class="ui celled table">
+                <thead>
+                    <tr>
+                        <th style="width: 100px;">是否已选</th>
+                        <th style="width: 200px;">课程名称</th>
+                        <th style="width: 100px;">学分</th>
+                        <th style="width: 100px;">开课年级</th>
+                        <th style="width: 100px;">开课学期</th>
+                        <th>必修专业</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="ui fitted toggle checkbox">
+
+                                ‘
+                                
+                                <input type="checkbox"><label for=""></label>
+                            </div>
+                        </td>
+                        <td>现代程序设计</td>
+                        <td>2</td>
+                        <td class="negative">大三</td>
+                        <td>秋季</td>
+                        <td>信息管理与信息系统</td>
+                    </tr>
+                    <tr class="positive">
+                        <td>
+                            <div class="ui fitted toggle checkbox">
+                                <input type="checkbox"><label for=""></label>
+                            </div>
+                        </td>
+                        <td>Jimmy</td>
+                        <td><i class="icon checkmark"></i> Approved</td>
+                        <td>None</td>
+                        <td>None</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td class="collapsing"></td>
+                        <td>Jamie</td>
+                        <td>Unknown</td>
+                        <td class="positive"> Requires call</td>
+                        <td><i class="icon checkmark"></i> Approved</td>
+                        <td>None</td>
+                    </tr>
+                    <tr class="negative">
+                        <td class="collapsing"></td>
+                        <td>Jill</td>
+                        <td>Unknown</td>
+                        <td>None</td>
+                        <td><i class="icon checkmark"></i> Approved</td>
+                        <td>None</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="ui segments">
+                <div class="ui attached segment">
+                    <div class="ui container">
+                        <div class="ui left floated medium header" style="margin: 0;">
+                            课程列表
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+                <div class="ui attached segment">
+                    <a href="/problem/529/">
+                        <div class="ui left ribbon label">529</div>「实验 6」小小黏菌，大大智慧
+                    </a>
+                </div>
+                <div class="ui attached segment">
+                    <a href="/problem/530/">
+                        <div class="ui left ribbon label">530</div>「实验 6」八皇后问题
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
