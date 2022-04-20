@@ -1,15 +1,15 @@
 const { Grid,Button,Segment,Divider,Header,Icon,List } = semanticUIReact
 
 class Square extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: null,
-        };
-    }
-
     getColor() {
-        return this.props.value ? 'blue' : 'gery'
+        let color = 'gery';
+        if (this.props.value) {
+            color = 'blue';
+        }
+        if (this.props.isWin) {
+            color = 'green'
+        }
+        return color
     }
 
     render() {
@@ -29,32 +29,11 @@ class Square extends React.Component {
 }
 
 class Board extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            squares: Array(9).fill(null),
-            isNextX: true,
-        };
-    }
-
-    handleClick(i) {
-        const squares = this.state.squares.slice();
-        if (calculateWinner(squares) || squares[i]) {
-            return;
-        }
-        squares[i] = this.state.isNextX ? 'X' : 'O';
-        this.setState({
-            squares: squares,
-            isNextX: !this.state.isNextX
-        });
-    }
-
     renderSquare(i) {
-        return <Square value={this.props.squares[i]} onClick={() => this.props.onClick(i)}/>;
+        return <Square isWin={this.props.isWinArray[i]} value={this.props.squares[i]} onClick={() => this.props.onClick(i)}/>;
     }
 
     render() {
-
         const boardStyle = {
             'flex-direction': 'column',
             'align-content': 'space-around',
@@ -128,7 +107,8 @@ class Game extends React.Component {
         const history = this.state.history.slice(0, this.state.stepNumber + 1);
         const cur = history[history.length - 1];
         const squares = cur.squares.slice();
-        if (calculateWinner(squares) || squares[i]) {
+        const [winner,_] =  calculateWinner(squares);
+        if (winner || squares[i]) {
             return;
         }
         squares[i] = this.state.isNextX ? 'X' : 'O';
@@ -151,7 +131,7 @@ class Game extends React.Component {
     render() {
         const history = this.state.history;
         const cur = history[this.state.stepNumber];
-        const winner = calculateWinner(cur.squares);
+        const [winner,isWinArray] = calculateWinner(cur.squares);
         let status;
         if (winner) {
             status = winner + "获得胜利";
@@ -160,16 +140,15 @@ class Game extends React.Component {
         }
 
         const moves = history.map((step, move) => {
-            const desc = move ?
-                ((move % 2) === 0 ? 'X' : 'O') + ' 放置棋子 ' + move :
-                '游戏开始';
+            const desc = move ? ((move % 2) === 1 ? 'X' : 'O') + ' 放置棋子 ' + move : '游戏开始';
+            const btnMsg = move ? "悔棋至此" : "清空棋盘";
             return (
                 <List.Item>
                     <List.Content floated='right'>
                     <Button animated='vertical' onClick={() => this.jumpTo(move)}>
                         <Button.Content hidden> GO </Button.Content>
                         <Button.Content visible>
-                            悔棋
+                            {btnMsg}
                         </Button.Content>
                     </Button>
                     </List.Content>
@@ -185,7 +164,7 @@ class Game extends React.Component {
                 <Header className="horizontal divider" as='h6'>
                     来玩井字棋
                 </Header>
-                <Board squares={cur.squares} onClick={(i) => this.handleClick(i)}/>
+                <Board isWinArray={isWinArray} squares={cur.squares} onClick={(i) => this.handleClick(i)}/>
                 <Header className="horizontal divider" as='h6'>
                     战况
                 </Header>
@@ -214,11 +193,15 @@ function calculateWinner(squares) {
         [0, 4, 8],
         [2, 4, 6],
     ];
+    const isWinArray = Array(9).fill(false);
     for (let i = 0; i < lines.length; i++) {
         const [a, b, c] = lines[i];
         if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-            return squares[a];
+            for (let j = 0;j < 3;j++) {
+                isWinArray[lines[i][j]] = true;
+            }
+            return [squares[a],isWinArray];
         }
     }
-    return null;
+    return [null,isWinArray];
 }
