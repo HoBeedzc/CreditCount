@@ -161,7 +161,7 @@ class Game extends React.Component {
 
         const moves = history.map((step, move) => {
             const desc = move ?
-                ((move % 2) === 0 ? 'X' : 'O') + ' 放置棋子 ' + move :
+                ((move % 2) === 1 ? 'X' : 'O') + ' 放置棋子 ' + move :
                 '游戏开始';
             return (
                 <List.Item>
