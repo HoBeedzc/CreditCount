@@ -7,7 +7,7 @@ class BrandInfo extends React.Component {
         return (
             <Segment>
                 <Image src='/img/count.png' size='medium' circular/>
-                <Header as='h6' textAlign='center'> CreditCount by Hobee <br/> Version Beta V1.1.0 </Header>
+                <Header as='h6' textAlign='center'> CreditCount by Hobee <br/> Version Beta V1.2.0 </Header>
             </Segment>
         );
     }

@@ -15,7 +15,7 @@ class Author extends React.Component {
 
         return (
             <Card>
-                <Image src='http://zequn.top/authors/admin/avatar_huff85521ba967137aca91b4b454fabea2_70253_270x270_fill_q75_lanczos_center.jpg' wrapped ui={false}/>
+                <Image src='/img/author.png' wrapped ui={false}/>
                 <Card.Content>
                     <Card.Header>Hobee Liu (Author)</Card.Header>
                     <Card.Meta>
