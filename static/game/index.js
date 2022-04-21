@@ -1,4 +1,6 @@
-const {Grid, Button, Segment, Divider, Header, Icon, List} = semanticUIReact
+'use strict';
+
+const {Grid, Button, Segment, Header, List} = semanticUIReact;
 
 class Square extends React.Component {
     getColor() {
@@ -126,7 +128,7 @@ class Game extends React.Component {
         });
     }
 
-    jumpTo(step,reset=false) {
+    jumpTo(step, reset = false) {
         this.setState({
             stepNumber: step,
             isNextX: (step % 2) === 0,
@@ -134,8 +136,8 @@ class Game extends React.Component {
         if (step === 0 && reset) {
             this.setState({
                 history: [{
-                squares: Array(9).fill(null),
-            }],
+                    squares: Array(9).fill(null),
+                }],
             })
         }
     }
@@ -144,7 +146,7 @@ class Game extends React.Component {
         return (
             <List.Item>
                 <List.Content floated='right'>
-                    <Button animated='vertical' onClick={() => this.jumpTo(0,true)}>
+                    <Button animated='vertical' onClick={() => this.jumpTo(0, true)}>
                         <Button.Content hidden> GO </Button.Content>
                         <Button.Content visible> 重新开始 </Button.Content>
                     </Button>
