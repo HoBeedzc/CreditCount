@@ -34,86 +34,7 @@
         <div class="ui segment" style="width: 1000px;left: 50px;">
             <div class="ui left rail" style="margin: 0;">
                 <div id="copyright"></div>
-                <div class="ui segment">
-                    <h6 class="ui horizontal divider header">
-                        更新日志
-                    </h6>
-                    <p> 最近更新日期: 2022-04-16 </p>
-                    <table class="ui very basic collapsing celled table">
-                        <thead>
-                            <tr>
-                                <th>版本</th>
-                                <th>更新内容</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Beta V1.2.0
-                                </td>
-                                <td>
-                                    增加作者模块，使用React重构部分功能
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Beta V1.1.0
-                                </td>
-                                <td>
-                                    增加井字棋，提高趣味性
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Beta V1.0.1
-                                </td>
-                                <td>
-                                    增加使用指南，修改联系方式
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Beta V1.0.0
-                                </td>
-                                <td>
-                                    开启公测
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Beta V0.0.3
-                                </td>
-                                <td>
-                                    修复手机端无法正常使用的Bug
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Beta V0.0.2
-                                </td>
-                                <td>
-                                    修复部分课程名称错误的Bug
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Beta V0.0.1
-                                </td>
-                                <td>
-                                    修复部分课程重名的Bug
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Beta V0.0.0
-                                </td>
-                                <td>
-                                    开启内测
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <div class="ui segments" id="update-log"></div>
                 <div class="ui segments" id="game"></div>
             </div>
             <div class="ui right rail" style="margin: 0;">
@@ -1905,6 +1826,7 @@
     <!-- script src="/static/index.js"></script -->
     <script src="/static/menubar/menu.js" type="text/babel"></script>
     <script src="/static/sidebar/copyright.js" type="text/babel"></script>
+    <script src="/static/sidebar/updateLog.js" type="text/babel"></script>
     <script src="/static/sidebar/author.js" type="text/babel"></script>
     <script src="/static/mainpage/courseFilter.js" type="text/babel"></script>
     <script src="/static/game/index.js" type="text/babel"></script>

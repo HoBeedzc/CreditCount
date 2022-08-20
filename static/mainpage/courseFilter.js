@@ -1,6 +1,6 @@
 'use strict';
 
-const {Divider, Form, Label, Button, Checkbox} = semanticUIReact;
+const {Form, Button, Checkbox} = semanticUIReact;
 
 class CourseFilter extends React.Component {
     state = {activeItem: 'home'}
