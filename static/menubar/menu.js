@@ -3,9 +3,8 @@
 const {Menu, Input} = semanticUIReact;
 
 class MenuBar extends React.Component {
-    state = {activeItem: 'home'}
 
-    handleItemClick = (e, {name}) => this.setState({activeItem: name})
+    state = {activeItem: 'home'}
 
     render() {
 
@@ -51,11 +50,6 @@ class MenuBar extends React.Component {
                     <Menu.Item>
                         <Input icon='search' placeholder='Search...'/>
                     </Menu.Item>
-                    <Menu.Item
-                        name='logout'
-                        active={activeItem === 'logout'}
-                        onClick={this.handleItemClick}
-                    />
                 </Menu.Menu>
             </Menu>
         );
