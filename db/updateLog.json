@@ -1,5 +1,15 @@
 [
   {
+    "version": "Beta V1.2.4",
+    "info": "修复翻页功能的bug",
+    "date": "2022-08-21"
+  },
+  {
+    "version": "Beta V1.2.3",
+    "info": "增加课程筛选功能bate",
+    "date": "2022-08-21"
+  },
+  {
     "version": "Beta V1.2.2",
     "info": "react重构更新日志，增加翻页功能",
     "date": "2022-08-20"
