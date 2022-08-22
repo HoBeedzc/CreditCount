@@ -1,5 +1,15 @@
 [
   {
+    "version": "Beta V1.3.1",
+    "info": "增加免责声明全局提醒",
+    "date": "2022-08-23"
+  },
+  {
+    "version": "Beta V1.3.0",
+    "info": "React重构专业选择器",
+    "date": "2022-08-22"
+  },
+  {
     "version": "Beta V1.2.4",
     "info": "修复翻页功能的bug",
     "date": "2022-08-21"

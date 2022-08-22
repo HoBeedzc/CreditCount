@@ -1,6 +1,6 @@
 "use strict";
 
-const {Message, Segment, Form, Button} = semanticUIReact;
+const {Message, Segment, Form, Button, Modal} = semanticUIReact;
 
 class UserInfo extends React.Component {
 
@@ -11,6 +11,7 @@ class UserInfo extends React.Component {
             isOnlySelectable: false,
             term: '',
             major: '',
+            isOpen: false,
         }
     }
 
@@ -46,6 +47,13 @@ class UserInfo extends React.Component {
         })
     }
 
+    handleTrigger = (action = false) => {
+        this.setState({
+            isOpen: !this.state.isOpen,
+            isAgree: action,
+        })
+    }
+
     render() {
 
         const termOptions = [
@@ -64,6 +72,14 @@ class UserInfo extends React.Component {
             {key: 'o', text: '金融工程', value: 'FE'},
             {key: 'o', text: '一般专业', value: 'GS'},
         ]
+
+        const disclaimersTrigger = () => {
+            return (
+                <label>我同意本网站
+                    <a href="javascript:void(0)" onClick={this.handleTrigger}>免责声明</a>
+                </label>
+            )
+        }
 
         return (
             <Segment>
@@ -84,6 +100,7 @@ class UserInfo extends React.Component {
                         options={majorOptions}
                         value={this.state.major}
                         onChange={this.handleChange}
+                        clearable
                     />
                     <Form.Select
                         fluid
@@ -94,6 +111,7 @@ class UserInfo extends React.Component {
                         name='term'
                         value={this.state.term}
                         onChange={this.handleChange}
+                        clearable
                     />
                     <Form.Checkbox
                         inline
@@ -105,7 +123,7 @@ class UserInfo extends React.Component {
                     <Form.Checkbox
                         inline
                         name='isAgree'
-                        label='我同意本网站免责声明'
+                        label={disclaimersTrigger()}
                         checked={this.state.isAgree}
                         onChange={() => this.handleCheckboxChange('isAgree', this.state.isAgree)}
                         required
@@ -120,6 +138,32 @@ class UserInfo extends React.Component {
                         onClick={() => this.handleReset()}
                     >清空</Button>
                 </Form>
+
+                <Modal
+                    basic
+                    open={this.state.isOpen}
+                    size='large'
+                    dimmer='blurring'
+                    centered={true}
+                >
+                    <Header icon>
+                        <Icon name='announcement'/>
+                        免责声明
+                    </Header>
+                    <Modal.Content>
+                        <p>
+                            核算结果仅供参考，请务必仔细核对，以免影响您的毕业。 由此产生的后果由使用者自行承担。 继续使用则代表您同意本声明，如不同意请关闭此页面。
+                        </p>
+                    </Modal.Content>
+                    <Modal.Actions>
+                        <Button basic color='red' inverted onClick={() => this.handleTrigger(false)}>
+                            <Icon name='remove'/> 不同意
+                        </Button>
+                        <Button color='green' inverted onClick={() => this.handleTrigger(true)}>
+                            <Icon name='checkmark'/> 同意
+                        </Button>
+                    </Modal.Actions>
+                </Modal>
             </Segment>
         )
     }
