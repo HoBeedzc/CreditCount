@@ -14,7 +14,7 @@ class CourseFilter extends React.Component {
         };
 
         const buttonStyle = {
-            'width':'100px',
+            'width': '100px',
         };
 
         const creditOptions = [
