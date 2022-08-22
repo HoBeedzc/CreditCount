@@ -1,6 +1,6 @@
 'use strict';
 
-const {Segment, Image, Header, Table, Menu, Icon} = semanticUIReact;
+const {Segment, Header, Table, Menu, Icon} = semanticUIReact;
 
 class getFileFromDB {
     static fetch(filePath) {
@@ -266,7 +266,6 @@ class UpdateLog extends React.Component {
 }
 
 ReactDOM.render(
-    <UpdateLog/>
-    ,
+    <UpdateLog/>,
     document.getElementById('update-log')
 );
