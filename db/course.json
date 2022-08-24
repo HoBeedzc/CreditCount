@@ -1,2 +1,954 @@
-version,info,date
-Beta V1.1.0,增加井字棋，提高趣味性,2022-04-16
+[
+    {
+        "name": "运筹学（二）",
+        "credit": 2,
+        "grade": "大二",
+        "term": "春季",
+        "major": "信息管理与信息系统|工业工程|工程管理|能源经济|经济统计|金融工程"
+    },
+    {
+        "name": "管理信息系统",
+        "credit": 2,
+        "grade": "大二",
+        "term": "春季",
+        "major": "信息管理与信息系统|工业工程|工程管理"
+    },
+    {
+        "name": "生产与运作管理",
+        "credit": 2.5,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "信息管理与信息系统|工业工程|工程管理"
+    },
+    {
+        "name": "现代程序设计",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "信息管理与信息系统|工业工程|工程管理"
+    },
+    {
+        "name": "计量经济学",
+        "credit": 3,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "能源经济|经济统计|金融工程|信息管理与信息系统"
+    },
+    {
+        "name": "国际经济学",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "能源经济|经济统计|金融工程"
+    },
+    {
+        "name": "货币金融学",
+        "credit": 3,
+        "grade": "大二",
+        "term": "春季",
+        "major": "能源经济|经济统计|金融工程"
+    },
+    {
+        "name": "应用随机过程",
+        "credit": 2.5,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "能源经济|经济统计|金融工程"
+    },
+    {
+        "name": "组织行为学",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "工商管理|会计学"
+    },
+    {
+        "name": "市场营销",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "工商管理|会计学"
+    },
+    {
+        "name": "财务报表分析",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "工商管理|会计学"
+    },
+    {
+        "name": "资本运营",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "工商管理|会计学"
+    },
+    {
+        "name": "营销调研",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "工商管理|会计学"
+    },
+    {
+        "name": "人力资源管理",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "工商管理|会计学"
+    },
+    {
+        "name": "数据结构",
+        "credit": 2.5,
+        "grade": "大二",
+        "term": "春季",
+        "major": "工程管理|信息管理与信息系统"
+    },
+    {
+        "name": "项目管理概论",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "工程管理"
+    },
+    {
+        "name": "工程经济学",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "工程管理|工业工程"
+    },
+    {
+        "name": "交通网络规划",
+        "credit": 2.5,
+        "grade": "大三",
+        "term": "春季",
+        "major": "工程管理"
+    },
+    {
+        "name": "工程进度管理",
+        "credit": 1.5,
+        "grade": "大三",
+        "term": "春季",
+        "major": "工程管理"
+    },
+    {
+        "name": "工程合同管理",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "工程管理"
+    },
+    {
+        "name": "工程项目风险管理",
+        "credit": 1.5,
+        "grade": "大三",
+        "term": "春季",
+        "major": "工程管理"
+    },
+    {
+        "name": "技术创新管理",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "工程管理"
+    },
+    {
+        "name": "现代管理科学方法",
+        "credit": 1.5,
+        "grade": "大三",
+        "term": "春季",
+        "major": "工程管理"
+    },
+    {
+        "name": "离散数学",
+        "credit": 2,
+        "grade": "大二",
+        "term": "春季",
+        "major": "信息管理与信息系统"
+    },
+    {
+        "name": "人工智能和深度学习",
+        "credit": 2.5,
+        "grade": "大三",
+        "term": "春季",
+        "major": "信息管理与信息系统|经济统计"
+    },
+    {
+        "name": "数据库原理与应用",
+        "credit": 2.5,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "信息管理与信息系统"
+    },
+    {
+        "name": "数据通讯与网络技术",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "信息管理与信息系统"
+    },
+    {
+        "name": "信息系统分析与设计",
+        "credit": 2.5,
+        "grade": "大三",
+        "term": "春季",
+        "major": "信息管理与信息系统"
+    },
+    {
+        "name": "决策与商务智能系统",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "信息管理与信息系统"
+    },
+    {
+        "name": "信息经济学",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "信息管理与信息系统"
+    },
+    {
+        "name": "大型数据库应用实验",
+        "credit": 1.5,
+        "grade": "大三",
+        "term": "春季",
+        "major": "信息管理与信息系统"
+    },
+    {
+        "name": "机械工程技术训练B",
+        "credit": 2,
+        "grade": "大二",
+        "term": "春季",
+        "major": "工业工程"
+    },
+    {
+        "name": "机械制造基础",
+        "credit": 3,
+        "grade": "大二",
+        "term": "春季",
+        "major": "工业工程"
+    },
+    {
+        "name": "系统工程与工业工程原理",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "工业工程"
+    },
+    {
+        "name": "基础工业工程",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "工业工程"
+    },
+    {
+        "name": "物流管理",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "工业工程"
+    },
+    {
+        "name": "人因工程",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "工业工程"
+    },
+    {
+        "name": "系统仿真及其应用",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "工业工程"
+    },
+    {
+        "name": "项目管理",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "工业工程"
+    },
+    {
+        "name": "质量管理与可靠性工程",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "工业工程"
+    },
+    {
+        "name": "中级财务会计",
+        "credit": 4,
+        "grade": "大二",
+        "term": "春季",
+        "major": "会计学"
+    },
+    {
+        "name": "高级财务会计",
+        "credit": 3,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "会计学"
+    },
+    {
+        "name": "成本会计",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "会计学"
+    },
+    {
+        "name": "税法",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "会计学"
+    },
+    {
+        "name": "管理会计",
+        "credit": 2.5,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "会计学"
+    },
+    {
+        "name": "会计信息系统",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "会计学"
+    },
+    {
+        "name": "审计学",
+        "credit": 3,
+        "grade": "大三",
+        "term": "春季",
+        "major": "会计学"
+    },
+    {
+        "name": "政府与非营利组织会计",
+        "credit": 1.5,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "会计学"
+    },
+    {
+        "name": "战略管理",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "工商管理"
+    },
+    {
+        "name": "公共关系学",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "工商管理"
+    },
+    {
+        "name": "企业经营模拟实验",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "工商管理"
+    },
+    {
+        "name": "企业管理诊断与咨询",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "工商管理"
+    },
+    {
+        "name": "营销模型与定量分析",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "工商管理"
+    },
+    {
+        "name": "数字化赋能创新",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "工商管理"
+    },
+    {
+        "name": "服务营销",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "工商管理"
+    },
+    {
+        "name": "能源经济学",
+        "credit": 3,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "能源经济"
+    },
+    {
+        "name": "环境经济学",
+        "credit": 3,
+        "grade": "大三",
+        "term": "春季",
+        "major": "能源经济"
+    },
+    {
+        "name": "投入产出分析",
+        "credit": 2.5,
+        "grade": "大三",
+        "term": "春季",
+        "major": "能源经济"
+    },
+    {
+        "name": "发展经济学",
+        "credit": 3,
+        "grade": "大三",
+        "term": "春季",
+        "major": "能源经济"
+    },
+    {
+        "name": "资源经济学",
+        "credit": 2.5,
+        "grade": "大三",
+        "term": "春季",
+        "major": "能源经济"
+    },
+    {
+        "name": "产业经济学",
+        "credit": 3,
+        "grade": "大三",
+        "term": "春季",
+        "major": "能源经济"
+    },
+    {
+        "name": "时间序列分析",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "经济统计"
+    },
+    {
+        "name": "R语言编程及应用",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "经济统计"
+    },
+    {
+        "name": "统计学习",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "经济统计"
+    },
+    {
+        "name": "大数据平台基础",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "经济统计"
+    },
+    {
+        "name": "精算学",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "经济统计"
+    },
+    {
+        "name": "非参数统计",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "经济统计"
+    },
+    {
+        "name": "贝叶斯统计与计算",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "经济统计"
+    },
+    {
+        "name": "投资学",
+        "credit": 3,
+        "grade": "大二",
+        "term": "春季",
+        "major": "金融工程"
+    },
+    {
+        "name": "金融工程原理",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "金融工程"
+    },
+    {
+        "name": "金融衍生工具",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "金融工程"
+    },
+    {
+        "name": "金融计量学",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "金融工程"
+    },
+    {
+        "name": "行为金融学",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "金融工程"
+    },
+    {
+        "name": "金融机构与风险管理",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "金融工程"
+    },
+    {
+        "name": "数理金融学",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "金融工程"
+    },
+    {
+        "name": "国际金融市场",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "金融工程"
+    },
+    {
+        "name": "社会科学研究方法",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "施工组织设计",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "行为与运作管理前沿",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "知识产权与专利管理",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "计算机原理及应用",
+        "credit": 2,
+        "grade": "大二",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "电子商务基础",
+        "credit": 2,
+        "grade": "大二",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "物流与供应链管理",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "企业资源计划",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "信息资源管理",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "大数据分析方法和技术",
+        "credit": 2.5,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "大数据与智能制造",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "信息系统应用实验",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "信息系统设计开发实验",
+        "credit": 2.5,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "机械基础",
+        "credit": 2,
+        "grade": "大二",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "电工学",
+        "credit": 3.5,
+        "grade": "大二",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "用户体验度量",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "系统建模与评价方法",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "定量风险分析",
+        "credit": 1.5,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "供应链管理",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "成本管理",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "企业与制造战略管理",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "决策分析",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "物流系统规划",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "工业工程研究方法与前沿",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "商业伦理与企业社会责任",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "公司治理",
+        "credit": 1,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "企业经营实战沙盘模拟",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "项目成本管理",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "会计理论",
+        "credit": 1,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "健康经济学",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "职业生涯规划",
+        "credit": 1,
+        "grade": "大二",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "幸福心理学",
+        "credit": 1,
+        "grade": "大二",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "管理沟通",
+        "credit": 1.5,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "消费者行为研究",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "领导力工作坊",
+        "credit": 1,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "数字营销学",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "创业管理",
+        "credit": 1,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "能源经济数量模型",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "能源金融",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "气候经济学",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "能源政策与战略",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "航空经济学",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "健康经济学",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "风险管理与保险学",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "金融风险管理",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "数据分析与可视化",
+        "credit": 1,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "Matlab应用",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "金融市场",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "投资基金与风险投资",
+        "credit": 2,
+        "grade": "大三",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "金融时间序列分析",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "公司金融",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "广义线性模型",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "非参数统计",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "固定收益证券",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "保险学",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "量化交易与大数据金融",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "金融数据挖掘",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "博弈论与信息经济学",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "科研课堂",
+        "credit": 2,
+        "grade": "大三",
+        "term": "春季",
+        "major": "一般专业类"
+    },
+    {
+        "name": "生产实习（社会课堂）",
+        "credit": 2,
+        "grade": "大四",
+        "term": "秋季",
+        "major": "一般专业类"
+    }
+]
