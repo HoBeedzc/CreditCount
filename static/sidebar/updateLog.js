@@ -12,6 +12,21 @@ require(['./static/Tools'], function (Tools) {
     });
 });
 
+class getFileFromDB {
+    static fetch(filePath) {
+        return new Promise(function (resolve, reject) {
+            fetch(filePath).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                resolve(data);
+            }).catch(function (e) {
+                reject(e);
+                console.log("Oops, error");
+            });
+        });
+    }
+}
+
 class VersionInfo extends React.Component {
     render() {
         return (
@@ -164,6 +179,14 @@ class UpdateLog extends React.Component {
     }
 
     renderVersionInfo() {
+
+        getFileFromDB.fetch('./db/updateLog.json').then(function (response) {
+            data = JSON.stringify(response);
+            // console.log(data);
+            localStorage.setItem('vi', data);
+        }).catch(function (response) {
+            console.log(response);
+        });
 
         let data = JSON.parse(localStorage.getItem('vi'));
 
