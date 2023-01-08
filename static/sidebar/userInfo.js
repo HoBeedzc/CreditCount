@@ -19,8 +19,17 @@ class UserInfo extends React.Component {
         $('#info-message').hide();
     }
 
-    handleChange = (e, {name, value}) => {
-        this.setState({[name]: value})
+    handleChange(name,value) {
+        if (this.state[name] !== value) {
+            this.setState({
+               [name]:value
+            });
+        }
+        if (name === 'term' && value === '') {
+            this.setState({
+               isOnlySelectable:false
+            });
+        }
     }
 
     handleCheckboxChange = (name, value) => {
@@ -99,24 +108,25 @@ class UserInfo extends React.Component {
                         name='major'
                         options={majorOptions}
                         value={this.state.major}
-                        onChange={this.handleChange}
+                        onChange={(e,{name,value}) => this.handleChange(name,value)}
                         clearable
                     />
                     <Form.Select
                         fluid
                         id='grade-selector'
                         label='年级'
-                        placeholder='开课年级'
+                        placeholder='年级'
                         options={termOptions}
                         name='term'
                         value={this.state.term}
-                        onChange={this.handleChange}
+                        onChange={(e,{name,value}) => this.handleChange(name,value)}
                         clearable
                     />
                     <Form.Checkbox
                         inline
                         label='仅查看可选课程'
                         name='isOnlySelectable'
+                        disabled={this.state.term === ''}
                         checked={this.state.isOnlySelectable}
                         onChange={() => this.handleCheckboxChange('isOnlySelectable', this.state.isOnlySelectable)}
                     />
