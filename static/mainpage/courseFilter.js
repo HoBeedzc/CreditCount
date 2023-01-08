@@ -65,6 +65,7 @@ class CourseFilter extends React.Component {
                         label='开课年级'
                         placeholder='开课年级'
                         options={termOptions}
+                        clearable
                     />
                     <Form.Select
                         fluid
@@ -72,6 +73,7 @@ class CourseFilter extends React.Component {
                         label='专业'
                         placeholder='专业'
                         options={majorOptions}
+                        clearable
                     />
                     <Form.Group style={subGroupStyle}>
                         <Form.Field
