@@ -57,6 +57,7 @@ class CourseList extends React.Component {
             maxPage: 1,
             pageSize: 20,
             checkedNum:0,
+            dataLength:0,
         }
     }
 
@@ -75,8 +76,18 @@ class CourseList extends React.Component {
         this.state.data[relativeIndex].isChecked = info.checked
     }
 
+    handleCleanCheckedCourse() {
+        for (let i=0; i < this.state.dataLength ;i++) {
+            this.state.data[i].isChecked = false
+        }
+        if (this.state.checkedNum > 0) {
+            this.setState({
+                checkedNum: 0,
+            });
+        }
+    }
+
     handleDropdownChange(info) {
-        console.log(info)
         if (this.state.pageSize !== parseInt(info.value)) {
             this.setState({
                 pageSize: parseInt(info.value),
@@ -202,7 +213,11 @@ class CourseList extends React.Component {
                 <Table.Footer fullWidth>
                     <Table.Row>
                         <Table.HeaderCell colSpan='6'>
-                            <Button disabled size='small'>
+                            <Button
+                                disabled = {this.state.checkedNum===0}
+                                size='small'
+                                onClick={() => this.handleCleanCheckedCourse()}
+                            >
                                 清除已选
                             </Button>
                             <span>
