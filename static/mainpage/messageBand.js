@@ -1,6 +1,6 @@
 "use strict";
 
-const {Message, Step, Progress, Segment} = semanticUIReact;
+const { Message, Step, Progress, Segment } = semanticUIReact;
 
 
 class NoticeMessage extends React.Component {
@@ -19,7 +19,7 @@ class NoticeMessage extends React.Component {
                         <li>本系统由 100% 前端实现，不会收集任何个人隐私数据，请放心使用。</li>
                         <li>建议使用电脑访问本页面，手机访问可能由于缩放比例而导致使用体验不佳。</li>
                         <li>使用方式：选择专业，勾选已选课程，学分会自动核算。</li>
-                        <li>如有疑问可电子邮件 <a href="mailto:lzqpublic@163.com"> lzqpublic@163.com </a> 联系作者。</li>
+                        <li>如有疑问可电子邮件 <a href="mailto:support@hobee.me"> support@hobee.me </a> 联系作者。</li>
                         <li>本产品依据《经济管理学院本科生培养方案 2017版》设计，如有出入，可通过上述方式联系开发者。</li>
                         <li>如需增加课程，请编辑：课程名称-学分-开课年级-开课学期-必修专业 并发送至上述邮箱。</li>
                         <li>如果网站无法正常工作，请尝试清理浏览器缓存/更换浏览器或使用无痕模式打开网页。</li>
@@ -64,7 +64,7 @@ class StepBar extends React.Component {
                         active={1 === this.state.activeStep}
                         disabled={1 > this.state.activeStep}
                     >
-                        <Icon name='truck'/>
+                        <Icon name='truck' />
                         <Step.Content>
                             <Step.Title>阅读须知</Step.Title>
                             <Step.Description>阅读网站须知与免责声明</Step.Description>
@@ -76,7 +76,7 @@ class StepBar extends React.Component {
                         active={2 === this.state.activeStep}
                         disabled={2 > this.state.activeStep}
                     >
-                        <Icon name='tachometer alternate'/>
+                        <Icon name='tachometer alternate' />
                         <Step.Content>
                             <Step.Title>选择专业</Step.Title>
                             <Step.Description>选择预计准出专业与年级</Step.Description>
@@ -88,7 +88,7 @@ class StepBar extends React.Component {
                         active={3 === this.state.activeStep}
                         disabled={3 > this.state.activeStep}
                     >
-                        <Icon name='calculator'/>
+                        <Icon name='calculator' />
                         <Step.Content>
                             <Step.Title>勾选课程</Step.Title>
                             <Step.Description>选择学过的课程</Step.Description>
@@ -100,14 +100,14 @@ class StepBar extends React.Component {
                         active={4 === this.state.activeStep}
                         disabled={4 > this.state.activeStep}
                     >
-                        <Icon name='info'/>
+                        <Icon name='info' />
                         <Step.Content>
                             <Step.Title>查看结果</Step.Title>
                             <Step.Description>查看学分核算结果</Step.Description>
                         </Step.Content>
                     </Step>
                 </Step.Group>
-                <Progress percent={processed} indicating/>
+                <Progress percent={processed} indicating />
             </Segment>
         )
     }
@@ -122,14 +122,14 @@ class MessageBand extends React.Component {
 
         return (
             <div style={divStyle}>
-                <NoticeMessage/>
-                <StepBar/>
+                <NoticeMessage />
+                <StepBar />
             </div>
         );
     }
 }
 
 ReactDOM.render(
-    <MessageBand/>,
+    <MessageBand />,
     document.getElementById('message-band')
 );
