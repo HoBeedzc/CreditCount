@@ -2,16 +2,6 @@
 
 const {Table, Checkbox, Button, Pagination, Dropdown, Label} = semanticUIReact;
 
-require(['./static/Tools'], function (Tools) {
-    Tools.GetFileFromDB.fetch('./db/course.json').then(function (response) {
-        let data = JSON.stringify(response);
-        console.log(data);
-        localStorage.setItem('ci', data);
-    }).catch(function (response) {
-        console.log(response);
-    });
-});
-
 class getFileFromDB {
     static fetch(filePath) {
         return new Promise(function (resolve, reject) {
@@ -119,15 +109,7 @@ class CourseList extends React.Component {
 
     renderCourseList() {
 
-        getFileFromDB.fetch('./db/course.json').then(function (response) {
-            data = JSON.stringify(response);
-            // console.log(data);
-            localStorage.setItem('ci', data);
-        }).catch(function (response) {
-            console.log(response);
-        });
-
-        let data = JSON.parse(localStorage.getItem('ci'));
+        let data = this.props.data;
         //add isChecked flag
         for (let i = 0; i < data.length; i++) {
             data[i].isChecked = false
@@ -248,7 +230,11 @@ class CourseList extends React.Component {
     }
 }
 
-ReactDOM.render(
-    <CourseList/>,
-    document.getElementById('course-list-react')
-);
+fetch('./db/course.json')
+  .then(response => response.json())
+  .then(data => {
+    ReactDOM.render(
+      <CourseList data={data} />,
+      document.getElementById('course-list-react')
+    );
+  });
