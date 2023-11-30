@@ -1,18 +1,13 @@
 'use strict';
 
-class GetFileFromDB {
-    static fetch(filePath) {
-        return new Promise(function (resolve, reject) {
-            fetch(filePath).then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                resolve(data);
-            }).catch(function (e) {
-                reject(e);
-                console.log("Oops, error");
-            });
-        });
-    }
+import React from 'react';
+
+const MyContext = React.createContext();
+
+function MyProvider(props) {
+  const data = 'This is some data';
+
+  return <MyContext.Provider value={data}>{props.children}</MyContext.Provider>;
 }
 
-module.exports = {GetFileFromDB}
+export { MyContext, MyProvider };

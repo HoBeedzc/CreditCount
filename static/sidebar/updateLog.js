@@ -2,31 +2,6 @@
 
 const {Segment, Header, Table, Menu, Icon} = semanticUIReact;
 
-require(['./static/Tools'], function (Tools) {
-    Tools.GetFileFromDB.fetch('./db/updateLog.json').then(function (response) {
-        let data = JSON.stringify(response);
-        console.log(data);
-        localStorage.setItem('vi', data);
-    }).catch(function (response) {
-        console.log(response);
-    });
-});
-
-class getFileFromDB {
-    static fetch(filePath) {
-        return new Promise(function (resolve, reject) {
-            fetch(filePath).then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                resolve(data);
-            }).catch(function (e) {
-                reject(e);
-                console.log("Oops, error");
-            });
-        });
-    }
-}
-
 class VersionInfo extends React.Component {
     render() {
         return (
@@ -180,15 +155,7 @@ class UpdateLog extends React.Component {
 
     renderVersionInfo() {
 
-        getFileFromDB.fetch('./db/updateLog.json').then(function (response) {
-            data = JSON.stringify(response);
-            // console.log(data);
-            localStorage.setItem('vi', data);
-        }).catch(function (response) {
-            console.log(response);
-        });
-
-        let data = JSON.parse(localStorage.getItem('vi'));
+        let data = this.props.data;
 
         if (this.state.lastUpdateDate !== data[0]['date']) {
 
@@ -275,7 +242,12 @@ class UpdateLog extends React.Component {
     }
 }
 
-ReactDOM.render(
-    <UpdateLog/>,
-    document.getElementById('update-log')
-);
+
+fetch('./db/updateLog.json')
+  .then(response => response.json())
+  .then(data => {
+    ReactDOM.render(
+      <UpdateLog data={data} />,
+      document.getElementById('update-log')
+    );
+  });

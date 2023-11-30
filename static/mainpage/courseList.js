@@ -2,31 +2,6 @@
 
 const {Table, Checkbox, Button, Pagination, Dropdown, Label} = semanticUIReact;
 
-require(['./static/Tools'], function (Tools) {
-    Tools.GetFileFromDB.fetch('./db/course.json').then(function (response) {
-        let data = JSON.stringify(response);
-        console.log(data);
-        localStorage.setItem('ci', data);
-    }).catch(function (response) {
-        console.log(response);
-    });
-});
-
-class getFileFromDB {
-    static fetch(filePath) {
-        return new Promise(function (resolve, reject) {
-            fetch(filePath).then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                resolve(data);
-            }).catch(function (e) {
-                reject(e);
-                console.log("Oops, error");
-            });
-        });
-    }
-}
-
 class Course extends React.Component {
     render() {
         return (
@@ -53,6 +28,7 @@ class CourseList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            data: this.props.data,
             curPage: 1,
             maxPage: 1,
             pageSize: 20,
@@ -127,26 +103,14 @@ class CourseList extends React.Component {
 
     renderCourseList() {
 
-        getFileFromDB.fetch('./db/course.json').then(function (response) {
-            data = JSON.stringify(response);
-            // console.log(data);
-            localStorage.setItem('ci', data);
-        }).catch(function (response) {
-            console.log(response);
-        });
-
-        let data = JSON.parse(localStorage.getItem('ci'));
         //add isChecked flag
-        for (let i = 0; i < data.length; i++) {
-            data[i].isChecked = false
-        }
+        //for (let i = 0; i < this.state.data.length; i++) {
+        //    this.state.data[i].isChecked = false
+        //}
 
-        this.refreshState(data)
-        if (this.state.data != null) {
-            data = this.state.data
-        }
+        this.refreshState(this.state.data)
 
-        let courseInfo = data.map((item, index) => {
+        let courseInfo = this.state.data.map((item, index) => {
             return <Course
                 isChecked={item['isChecked']}
                 name={item['name']}
@@ -256,7 +220,11 @@ class CourseList extends React.Component {
     }
 }
 
-ReactDOM.render(
-    <CourseList/>,
-    document.getElementById('course-list-react')
-);
+fetch('./db/course.json')
+  .then(response => response.json())
+  .then(data => {
+    ReactDOM.render(
+      <CourseList data={data} />,
+      document.getElementById('course-list-react')
+    );
+  });
