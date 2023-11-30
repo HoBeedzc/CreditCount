@@ -61,6 +61,14 @@ class CourseList extends React.Component {
         }
     }
 
+    filterCourse(){
+        let filter = localStorage.getItem('courseFilter');
+        if (filter == null) {
+            return this.state.data
+        }
+        
+    }
+
     handleCheckCourse(relativeIndex, info) {
         if (this.state.data[relativeIndex].isChecked !== info.checked) {
             if (info.checked) {

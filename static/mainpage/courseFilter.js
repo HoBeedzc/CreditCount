@@ -1,11 +1,44 @@
 'use strict';
 
-const {Form, Button, Checkbox} = semanticUIReact;
+const {Form, Button, Checkbox, List} = semanticUIReact;
 
 class CourseFilter extends React.Component {
-    state = {activeItem: 'home'}
+    state = {
+        activeItem: 'home',
+        courseName:'',
+        creditSelection:'',
+        termSelection:'',
+        majorSelection:'',
+        courseNameFilter:'',
+        creditFilter:'',
+        termFilter:'',
+        majorFilter:''
+    }
 
-    handleItemClick = (e, {name}) => this.setState({activeItem: name});
+    handleClick() {
+        return 0
+    }
+
+    handleChange(name,value) {
+        if (this.state[name] !== value) {
+            this.setState({
+               [name]:value
+            });
+        }
+    }
+
+    handleSubmit() {
+        this.setState({
+            courseName:'',
+            creditSelection:'',
+            termSelection:'',
+            majorSelection:'',
+            courseNameFilter:this.state.courseName,
+            creditFilter:this.state.creditSelection,
+            termFilter:this.state.termSelection,
+            majorFilter:this.state.majorSelection
+        });
+    }
 
     render() {
 
@@ -42,38 +75,57 @@ class CourseFilter extends React.Component {
             {key: 'o', text: '一般专业', value: 'GS'},
         ]
 
+        const filterMessage = () => '课程名称：' + this.state.courseNameFilter +
+            '/ 学分：' + this.state.creditFilter +
+            '/ 开课年级：' + this.state.termFilter +
+            '/ 专业：' + this.state.majorFilter +
+            '/ 仅看未选：' + this.state.majorFilter +
+            '/'
+
         return (
-            <Form>
+            <Form success onSubmit={() => this.handleSubmit()}>
                 <Form.Group widths='equal'>
                     <Form.Input
                         fluid
                         id='form-subcomponent-shorthand-input-first-name'
                         label='课程名称'
+                        name='courseName'
                         placeholder='课程名称'
+                        value={this.state.courseName}
+                        onChange={(e,{name,value}) => this.handleChange(name,value)}
                     />
                     <Form.Select
                         fluid
                         id='form-subcomponent-shorthand-input-last-name'
                         label='学分'
+                        name='creditSelection'
                         placeholder='学分'
                         options={creditOptions}
                         clearable
+                        value={this.state.creditSelection}
+                        onChange={(e,{name,value}) => this.handleChange(name,value)}
                     />
                     <Form.Select
                         fluid
                         id='form-subcomponent-shorthand-input-last-name'
                         label='开课年级'
+                        name='termSelection'
                         placeholder='开课年级'
                         options={termOptions}
                         clearable
+                        value={this.state.termSelection}
+                        onChange={(e,{name,value}) => this.handleChange(name,value)}
                     />
                     <Form.Select
                         fluid
                         id='form-subcomponent-shorthand-input-last-name'
                         label='专业'
+                        name='majorSelection'
                         placeholder='专业'
                         options={majorOptions}
                         clearable
+                        value={this.state.majorSelection}
+                        onChange={(e,{name,value}) => this.handleChange(name,value)}
                     />
                     <Form.Group style={subGroupStyle}>
                         <Form.Field
@@ -86,9 +138,16 @@ class CourseFilter extends React.Component {
                             content='筛选'
                             icon='filter'
                             style={buttonStyle}
+                            onClick={() => this.handleClick()}
                         />
                     </Form.Group>
                 </Form.Group>
+                <Message
+                    success
+                    header='当前筛选条件：'
+                    content={filterMessage}
+                />
+                <p></p>
             </Form>
         );
     }

@@ -48,7 +48,7 @@ class StepBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            activeStep: 2,
+            activeStep: 1,
         }
     }
 
@@ -67,7 +67,7 @@ class StepBar extends React.Component {
                         <Icon name='truck' />
                         <Step.Content>
                             <Step.Title>阅读须知</Step.Title>
-                            <Step.Description>阅读网站须知与免责声明</Step.Description>
+                            <Step.Description>阅读并同意网站须知与免责声明</Step.Description>
                         </Step.Content>
                     </Step>
 
