@@ -1,6 +1,5 @@
-'use strict';
-
-const {Table, Checkbox, Button, Pagination, Dropdown, Label} = semanticUIReact;
+import React, { useState, useEffect } from 'react';
+import {Segment, Table, Checkbox, Button, Pagination, Dropdown, Label} from 'semantic-ui-react';
 
 class Course extends React.Component {
     render() {
@@ -35,14 +34,6 @@ class CourseList extends React.Component {
             checkedNum:0,
             dataLength:0,
         }
-    }
-
-    filterCourse(){
-        let filter = localStorage.getItem('courseFilter');
-        if (filter == null) {
-            return this.state.data
-        }
-        
     }
 
     handleCheckCourse(relativeIndex, info) {
@@ -220,11 +211,23 @@ class CourseList extends React.Component {
     }
 }
 
-fetch('./db/course.json')
-  .then(response => response.json())
-  .then(data => {
-    ReactDOM.render(
-      <CourseList data={data} />,
-      document.getElementById('course-list-react')
-    );
-  });
+function CourseListLoader() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch(process.env.PUBLIC_URL + '/db/course.json')
+      .then(response => response.json())
+      .then(jsonData => setData(jsonData))
+      .catch(error => console.error(error));
+  }, []);
+
+  if (data === null) {
+    return <Segment>Loading...</Segment>;
+  }
+
+  return (
+    <CourseList data={data} />
+  );
+}
+
+export default CourseListLoader;

@@ -1,18 +1,70 @@
-# CreditCount For BUAA SEM
-    
-## Introduction
+# Getting Started with Create React App
 
-This is a simple credit count tool for BUAA SEM. Since the credit count system in the school is not accurate, it is better to write one by yourself. All front-end implementation, no sensitive data will be stored, please feel free to use.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-BUAA SEM 毕业学分核算 由于教务系统显示的学分并不准确，还不如自己写一个更方便。 全前端实现，不会存储任何敏感数据，请放心食用
+## Available Scripts
 
-## Usage
+In the project directory, you can run:
 
-You can use it easily on web browser. Just open the cc.hobeedzc.cn in your browser, and you can use it.
+### `npm start`
 
-## Disclaimer
-The account result is only for reference, the developer does not guarantee the correctness of the result, please check carefully to avoid affecting graduation. If any problems caused by the account result, the developer will not be responsible. Using it means that you have read and accepted this statement.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-免责声明：核算结果仅供参考，开发者不保证结果正确性，请务必仔细核对，以免对毕业造成影响。如因核算结果出现问题而产生的一切问题开发者均不承担责任。使用则代表已约阅读并接受此声明。
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-如其他学校其他专业等也有类似学分核算需求，或对本产品有任何改进优化建议，欢迎提issue或pr！
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -1,10 +1,12 @@
 'use strict';
-
-const { Card, Icon, Image, Button } = semanticUIReact;
+import React from 'react';
+import { Card, Icon, Image, Button } from 'semantic-ui-react';
 
 class Author extends React.Component {
-    hide() {
-        $('#author').hide();
+    state = { visible: true }
+
+    hide = () => {
+        this.setState({ visible: false });
     }
 
     render() {
@@ -13,9 +15,15 @@ class Author extends React.Component {
             'text-align': 'center',
         };
 
+        if (!this.state.visible) {
+            return (
+                <div></div>
+            )
+        }
+
         return (
             <Card>
-                <Image src='/img/author.png' wrapped ui={false} />
+                <Image src={process.env.PUBLIC_URL + '/img/author.png'} wrapped ui={false} />
                 <Card.Content>
                     <Card.Header>Hobee (Author)</Card.Header>
                     <Card.Meta>
@@ -35,10 +43,10 @@ class Author extends React.Component {
                         <a href='https://github.com/HoBeedzc'><Icon name='github' /></a>
                     </p>
                     <div className='ui two buttons'>
-                        <Button basic color='green' onClick={() => { window.location.href = "http://hobee.me/" }}>
+                        <Button basic color='green' onClick={() => { window.location.href = "https://hobee.me/" }}>
                             More info
                         </Button>
-                        <Button basic color='red' onClick={() => this.hide()}>
+                        <Button basic color='red' onClick={this.hide}>
                             Hide it
                         </Button>
                     </div>
@@ -48,7 +56,4 @@ class Author extends React.Component {
     }
 }
 
-ReactDOM.render(
-    <Author />,
-    document.getElementById('author')
-);
+export default Author

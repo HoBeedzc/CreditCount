@@ -1,6 +1,5 @@
-'use strict';
-
-const {Menu, Input} = semanticUIReact;
+import React from 'react';
+import {Menu, Input} from 'semantic-ui-react';
 
 class MenuBar extends React.Component {
 
@@ -60,7 +59,4 @@ class MenuBar extends React.Component {
     }
 }
 
-ReactDOM.render(
-    <MenuBar/>,
-    document.getElementById('menu')
-);
+export default MenuBar;

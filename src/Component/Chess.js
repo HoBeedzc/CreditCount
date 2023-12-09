@@ -1,6 +1,5 @@
-'use strict';
-
-const {Grid, Button, Segment, Header, List} = semanticUIReact;
+import React from 'react';
+import {Grid, Button, Segment, Header, List} from 'semantic-ui-react';
 
 class Square extends React.Component {
     getColor() {
@@ -98,7 +97,7 @@ class Board extends React.Component {
     }
 }
 
-class Game extends React.Component {
+class Chess extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -211,13 +210,6 @@ class Game extends React.Component {
     }
 }
 
-// ========================================
-
-ReactDOM.render(
-    <Game/>,
-    document.getElementById('game')
-);
-
 function calculateWinner(squares) {
     const lines = [
         [0, 1, 2],
@@ -241,3 +233,5 @@ function calculateWinner(squares) {
     }
     return [null, isWinArray];
 }
+
+export default Chess;

@@ -1,6 +1,30 @@
-"use strict";
+import React from 'react';
+import {Message, Segment, Form, Button, Modal, Icon, Header} from 'semantic-ui-react';
+import { useStatesStore } from "../Utils/States";
 
-const {Message, Segment, Form, Button, Modal} = semanticUIReact;
+function setStep(step) {
+    useStatesStore.setState({step: step});
+}
+
+function setMajor(major) {
+    useStatesStore.setState({major: major});
+    if (major === '') {
+        setStep(2);
+    }
+    if (major !== '' && useStatesStore.getState().grade !== '') {
+        setStep(3);
+    }
+}
+
+function setGrade(grade) {
+    useStatesStore.setState({grade: grade});
+    if (grade === '') {
+        setStep(2);
+    }
+    if (grade !== '' && useStatesStore.getState().major !== '') {
+        setStep(3);
+    }
+}
 
 class UserInfo extends React.Component {
 
@@ -16,7 +40,7 @@ class UserInfo extends React.Component {
     }
 
     handleDismiss = () => {
-        $('#info-message').hide();
+        document.getElementById('info-message').hidden = true;
     }
 
     handleChange(name,value) {
@@ -30,21 +54,24 @@ class UserInfo extends React.Component {
                isOnlySelectable:false
             });
         }
+        if (name === 'major') {
+            setMajor(value);
+        }
+        if (name === 'term') {
+            setGrade(value);
+        }
     }
 
     handleCheckboxChange = (name, value) => {
         this.setState({
             [name]: !value,
         })
-    }
 
-    handleSubmit() {
-        const major = $("#major-selector > div.divider.text").text();
-        const grade = $("#grade-selector > div.divider.text").text();
-        const params = new URLSearchParams();
-        params.set('major', encodeURIComponent(major));       // 设置参数
-        params.set('grade', grade);       // 支持 Boolean、Number 等丰富类型
-        window.location.href = '/?' + params.toString();
+        if (name === 'isAgree' && !value) {
+            setStep(2);
+        } else if (name === 'isAgree' && value) {
+            setStep(1);
+        }
     }
 
     handleReset() {
@@ -54,6 +81,9 @@ class UserInfo extends React.Component {
             term: '',
             major: '',
         })
+        setMajor('');
+        setGrade('');
+        setStep(1);
     }
 
     handleTrigger = (action = false) => {
@@ -61,6 +91,10 @@ class UserInfo extends React.Component {
             isOpen: !this.state.isOpen,
             isAgree: action,
         })
+
+        if (action) {
+            setStep(2);
+        }
     }
 
     render() {
@@ -97,7 +131,7 @@ class UserInfo extends React.Component {
                     info
                     onDismiss={this.handleDismiss}
                     header='使用须知'
-                    content="更改专业后需点击确认，否则可能导致计算结果不准确。"
+                    content="使用本网站前，请先阅读并同意本网站免责声明。选择专业和年级后直接勾选已选课程，学分会自动核算。"
                 />
                 <Form>
                     <Form.Select
@@ -109,6 +143,7 @@ class UserInfo extends React.Component {
                         options={majorOptions}
                         value={this.state.major}
                         onChange={(e,{name,value}) => this.handleChange(name,value)}
+                        disabled={!this.state.isAgree}
                         clearable
                     />
                     <Form.Select
@@ -120,6 +155,7 @@ class UserInfo extends React.Component {
                         name='term'
                         value={this.state.term}
                         onChange={(e,{name,value}) => this.handleChange(name,value)}
+                        disabled={!this.state.isAgree}
                         clearable
                     />
                     <Form.Checkbox
@@ -139,14 +175,9 @@ class UserInfo extends React.Component {
                         required
                     />
                     <Button
-                        color='blue'
-                        disabled={!this.state.isAgree}
-                        onClick={() => this.handleSubmit()}
-                    >确认</Button>
-                    <Button
                         color='grey'
                         onClick={() => this.handleReset()}
-                    >清空</Button>
+                    >清空选择</Button>
                 </Form>
 
                 <Modal
@@ -179,7 +210,10 @@ class UserInfo extends React.Component {
     }
 }
 
-ReactDOM.render(
-    <UserInfo/>,
-    document.getElementById('user-info')
-);
+function UserInfoWithCTX() {
+    return (
+        <UserInfo />
+    );
+}
+
+export default UserInfoWithCTX;

@@ -1,6 +1,5 @@
-'use strict';
-
-const {Segment, Header, Table, Menu, Icon} = semanticUIReact;
+import React, { useState, useEffect } from 'react';
+import {Segment, Header, Table, Menu, Icon} from 'semantic-ui-react';
 
 class VersionInfo extends React.Component {
     render() {
@@ -242,12 +241,23 @@ class UpdateLog extends React.Component {
     }
 }
 
+function UpdateLogLoader() {
+  const [data, setData] = useState(null);
 
-fetch('./db/updateLog.json')
-  .then(response => response.json())
-  .then(data => {
-    ReactDOM.render(
-      <UpdateLog data={data} />,
-      document.getElementById('update-log')
-    );
-  });
+  useEffect(() => {
+    fetch(process.env.PUBLIC_URL + '/db/updateLog.json')
+      .then(response => response.json())
+      .then(jsonData => setData(jsonData))
+      .catch(error => console.error(error));
+  }, []);
+
+  if (data === null) {
+    return <Segment>Loading...</Segment>;
+  }
+
+  return (
+    <UpdateLog data={data} />
+  );
+}
+
+export default UpdateLogLoader;
