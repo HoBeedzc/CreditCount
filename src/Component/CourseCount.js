@@ -16,19 +16,19 @@ function CourseCount() {
       <p>以下会列出您的学分明细，请认真核对</p>
       <ul class="ui list">
         <li>
-          本专业核专 <span class="cc-credit-core-major">x</span> 分（不计入）
+          本专业核专 <span class="cc-credit-core-major"> 0 </span> 分（不计入）
         </li>
         <li>
-          其他专业核专 <span class="cc-credit-core-other">x</span> 分
+          其他专业核专 <span class="cc-credit-core-other"> 0 </span> 分
         </li>
         <li>
-          一般专业 <span class="cc-credit-general">x</span> 分
+          一般专业 <span class="cc-credit-general"> 0 </span> 分
         </li>
         <li>
-          有效有共计 <span class="cc-credit-total">x</span> 分
+          有效有共计 <span class="cc-credit-total"> 0 </span> 分
         </li>
         <li>
-          剩余应选 <span class="cc-credit-remain">x</span> 分
+          剩余应选 <span class="cc-credit-remain"> 0 </span> 分
         </li>
       </ul>
       <h6 class="ui horizontal divider header">课程明细</h6>
