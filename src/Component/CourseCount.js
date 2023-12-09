@@ -1,59 +1,63 @@
 import React from "react";
+import { Segment, Header, Icon, Divider, List, Label } from "semantic-ui-react";
 
 function CourseCount() {
   return (
-    <div class="ui segment">
-      <h2 class="ui header">
-        <i class="archive icon"></i>
-        <div class="content">
+    <Segment>
+      <Header as="h2">
+        <Icon name="archive" />
+        <Header.Content>
           您已共选 <span class="cc-credit-total"> 0 </span> 学分
-          <div class="sub header">
+          <Header.Subheader>
             还需再选 <span class="cc-credit-remain"> 0 </span> 学分
-          </div>
-        </div>
-      </h2>
-      <h6 class="ui horizontal divider header">学分明细</h6>
+          </Header.Subheader>
+        </Header.Content>
+      </Header>
+      <Divider horizontal> 学分明细 </Divider>
       <p>以下会列出您的学分明细，请认真核对</p>
-      <ul class="ui list">
-        <li>
+      <List bulleted>
+        <List.Item>
           本专业核专 <span class="cc-credit-core-major"> 0 </span> 分（不计入）
-        </li>
-        <li>
-          其他专业核专 <span class="cc-credit-core-other"> 0 </span> 分
-        </li>
-        <li>
-          一般专业 <span class="cc-credit-general"> 0 </span> 分
-        </li>
-        <li>
+        </List.Item>
+        <List.Item>
           有效有共计 <span class="cc-credit-total"> 0 </span> 分
-        </li>
-        <li>
+          <List.List>
+            <List.Item>
+              其他专业核专 <span class="cc-credit-core-other"> 0 </span> 分
+            </List.Item>
+            <List.Item>
+              一般专业 <span class="cc-credit-general"> 0 </span> 分
+            </List.Item>
+          </List.List>
+        </List.Item>
+        <List.Item>
           剩余应选 <span class="cc-credit-remain"> 0 </span> 分
-        </li>
-      </ul>
-      <h6 class="ui horizontal divider header">课程明细</h6>
+        </List.Item>
+      </List>
+      <Divider horizontal> 课程明细 </Divider>
       <p>以下会列出您选择的课程，请认真核对</p>
-      <div class="ui relaxed divided list" id="course-list">
-        <div
-          class="item"
-          id="left-courses-list-item-template"
-          style={{ display: "none" }}
-        >
-          <i class="large book middle aligned icon"></i>
-          <div class="content">
-            <div class="header">
-              <span class="cc-course-name">示例课程</span>/
-              <span class="cc-course-major">核心专业类</span>
-            </div>
-            <div class="description">
-              <span class="cc-course-credit">2学分</span>
-              <span class="cc-course-grade">大三</span>
-              <span class="cc-course-term">秋季</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <List divided selection celled>
+        <List.Item>
+          <List.Icon name="book" size="large" verticalAlign="middle" />
+          <List.Content>
+            <List.Header>
+              <span class="cc-course-name">示例课程 / 核心专业</span>
+            </List.Header>
+            <List.Description style={{ padding: "0.1em 0 0 0" }}>
+              <Label color='red'>
+                学分
+                <Label.Detail>2</Label.Detail>
+              </Label>
+              <Label color='teal'>大三</Label>
+              <Label color='yellow'>
+                学期
+                <Label.Detail>秋</Label.Detail>
+              </Label>
+            </List.Description>
+          </List.Content>
+        </List.Item>
+      </List>
+    </Segment>
   );
 }
 
